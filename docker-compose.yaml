@@ -1,0 +1,11 @@
+version: "3.8"
+
+services:
+  app:
+    container_name: home-prod
+    image: home-prod
+    build:
+      context: .
+      target: production
+    ports:
+      - 8080:80
