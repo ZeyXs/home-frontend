@@ -1,0 +1,29 @@
+name: Build and Push Docker Image
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Login to GHCR.io
+      uses: docker/login-action@v1
+      with:
+        registry: ghcr.io
+        username: ${{ github.repository_owner }}
+        password: ${{ secrets.TOKEN }}
+
+    - name: Build Docker image
+      run: |
+        docker build -t home-zeyx-dev:latest .
+        docker tag home-zeyx-dev:latest ghcr.io/zeyxs/home-zeyx-dev:latest
+
+    - name: Push Docker image to GHCR.io
+      run: docker push ghcr.io/zeyxs/home-zeyx-dev:latest
