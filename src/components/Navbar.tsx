@@ -17,9 +17,9 @@ export default function Navbar() {
       </div>
 
       <NavbarContent>
-        <NavbarLink name="> mes-projets" href="/" />
-        <NavbarLink name="> mes-compétences" href="/" />
-        <NavbarLink name="> mes-expériences" href="/" />
+        <NavbarLink name="> mes-projets" onClick={() => navigate('/')} />
+        <NavbarLink name="> mes-compétences" onClick={() => navigate('/')} />
+        <NavbarLink name="> mes-expériences" onClick={() => navigate('/')} />
         <NavbarButton onClick={() => console.log('Contact button clicked')}>
           <div className="flex flex-row space-x-2 text-white items-center justify-center">
             <div className="font-fira-code text-sm">Blog</div>

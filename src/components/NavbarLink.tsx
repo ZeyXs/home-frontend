@@ -1,12 +1,12 @@
 interface NavbarLinkProps {
     name: string;
-    href: string;
+    onClick: () => void;
 };
 
-export default function NavbarLink({ name, href }: NavbarLinkProps) {
+export default function NavbarLink({ name, onClick }: NavbarLinkProps) {
   return (
     <li>
-      <a href={href} className="font-fira-code text-white">{name}</a>
+      <div onClick={onClick} className="font-fira-code text-white cursor-pointer select-none">{name}</div>
     </li>
   );
 }
