@@ -10,3 +10,4 @@ export default function NavbarLink({ name, onClick }: NavbarLinkProps) {
     </li>
   );
 }
+
