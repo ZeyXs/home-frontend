@@ -8,7 +8,6 @@ import { useTypewriter } from "react-simple-typewriter";
 import DesktopMenu from './DesktopMenu';
 import DropdownMenu from './DropdownMenu';
 
-// Définition des types pour les liens de navigation
 export type NavLink = {
   name: string;
   path: string;
@@ -63,18 +62,15 @@ export default function Navbar() {
       </div>
 
       <NavbarContent>
-        {/* Menu pour mobile */}
         <div className="flex lg:hidden z-50">
           <NavbarButton onClick={handleDropdownNav}>
             {isDropdownNavToggled ? <IoClose size={30} /> : <IoMenu size={30} />}
           </NavbarButton>
         </div>
 
-        {/* Menu pour desktop */}
         <DesktopMenu navigate={navigate} navLinks={navLinks} />
       </NavbarContent>
 
-      {/* Dropdown menu pour mobile */}
       {isDropdownNavToggled && (
         <DropdownMenu 
           terminalText={terminalText}
