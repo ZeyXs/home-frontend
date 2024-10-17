@@ -9,9 +9,7 @@ interface NavbarLinkProps {
 
 export default function NavbarLink({ name, onClick }: NavbarLinkProps) {
   const [hovered, setHovered] = useState(false);
-
-
-
+  
   return (
     <motion.div
       onClick={onClick}

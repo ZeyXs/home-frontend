@@ -1,7 +1,8 @@
 import { FaArrowRight } from "react-icons/fa";
+
 import { NavLink } from "./Navbar";
-import NavbarButton from "./NavbarButton";
 import NavbarLink from "./NavbarLink";
+import NavbarButton from "./NavbarButton";
 
 type DropdownMenuProps = {
   terminalText: string;
